@@ -11,9 +11,9 @@ public:
             set2.insert(it);
         } 
 
-        for(auto it=set1.begin(); it!=set1.end();it++){
-            if(set2.find(*it)!=set2.end()){
-                ans.push_back(*it);
+        for(auto it: set1){
+            if(set2.find(it)!=set2.end()){
+                ans.push_back(it);
             }
         }
 
