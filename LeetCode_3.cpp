@@ -1,24 +1,35 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        set <char> Set;
-        int max=0;
-        int start=0;
-        int end=0;
-        while(start<s.size()){
-            auto it=Set.find(s[start]);
-            if(it==Set.end()){
-                if(start-end+1>max){
-                    max=start-end+1;
-                }
-                Set.insert(s[start]);
-                start++;
-            }
-            else{
-                Set.erase(s[end]);
-                end++;
-            }
+        vector< int > mpp(256,-1);
+        int l=0;
+        int r=0;
+        int maxlength=0;
+        while(r<s.size()) {
+            if(mpp[s[r]]!=-1) {
+                 if(mpp[s[r]]>=l) l = mpp[s[r]] +1;
+                 }
+           
+            mpp[s[r]] = r;
+            maxlength = max(maxlength,r-l+1);
+            r++;
         }
-        return max;
+        return maxlength;
+    //    int maxLength=0;
+    //    int l=0,r=0;
+    //    int n=s.size();
+    //    vector<int>hash(256,-1);
+    //    while(r<n){
+    //         if(hash[s[r]]!=-1){
+    //             if(hash[s[r]]>=l){
+    //                 l=hash[s[r]]+1;
+    //             }
+    //             int len=r-l+1;
+    //             maxLength=max(maxLength,len);
+    //             hash[s[r]]=r;
+    //             r++;
+    //         }
+    //    }
+    //    return maxLength;
     }
 };
