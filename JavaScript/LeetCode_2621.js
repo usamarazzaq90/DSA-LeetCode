@@ -3,11 +3,18 @@
  * @return {Promise}
  */
 async function sleep(millis) {
-    return new Promise((res,rej)=>{
-        setTimeout(()=>{
-        res();
-    }, millis)
-    })
+    // Method # 1
+    // return new Promise((res,rej)=>{
+    //     setTimeout(()=>{
+    //     res();
+    // }, millis)
+    // })
+
+    // Method # 2
+    // return new Promise((res)=>setTimeout(res,millis))
+
+    // Method # 3
+    await new Promise((res)=>setTimeout(res,millis))
 }
 
 /** 
