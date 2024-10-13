@@ -11,10 +11,10 @@ async function sleep(millis) {
     // })
 
     // Method # 2
-    // return new Promise((res)=>setTimeout(res,millis))
+    return new Promise((res)=>setTimeout(res,millis))
 
     // Method # 3
-    await new Promise((res)=>setTimeout(res,millis))
+    // await new Promise((res)=>setTimeout(res,millis))
 }
 
 /** 
