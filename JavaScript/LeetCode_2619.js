@@ -2,9 +2,16 @@
  * @return {null|boolean|number|string|Array|Object}
  */
 Array.prototype.last = function() {
-    let size=this.length
-    if(size){
-        return this.at(size-1)
+    //Method 1
+    // let size=this.length
+    // if(size){
+    //     return this.at(size-1)
+    // }
+    // return -1
+
+    //Method 2
+    if(this.length){
+        return this[this.length-1]
     }
     return -1
 };
