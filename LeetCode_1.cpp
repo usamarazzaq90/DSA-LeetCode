@@ -16,19 +16,19 @@ public:
 
     // Method # 2 (Optimized)
     vector<int> twoSum(vector<int>& nums, int target) {
-        vector <int> ans;
-        map<int,int>mp;
+        vector <int> result;
+        map <int,int> mp;
         for(int i=0;i<nums.size();i++){
             int x=target-nums[i];
             if(mp.find(x)!=mp.end()){
-                ans.push_back(i);
-                ans.push_back(mp[x]);
-                return ans;
+                result.push_back(i);
+                result.push_back(mp[x]);
+                return result;
             }
             else{
                 mp[nums[i]]=i;
             }
         }
         return {};
-    }
+   }
 };
